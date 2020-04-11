@@ -1,0 +1,32 @@
+﻿<Window x:Class="MyWpfCanvasGrid2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWpfCanvasGrid2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid Margin="10,10,222,10" SizeChanged="Grid_SizeChanged" Background="#FFBBBBBB">
+            <local:UCGrid x:Name="UCGrid" ColumnWidth="{Binding ColumnWidth}" RowHeight="{Binding RowHeight}" LineThickness="2" LineBrush="LightGray"/>
+        </Grid>
+
+        <Grid Margin="0,0,10,35" HorizontalAlignment="Right" Width="207">
+            <Label Content="ColumnWidth" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+            <Label Content="{Binding ColumnWidth}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="ColumnWidth" Margin="126,0,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="RowHeight" Margin="0,22,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="{Binding RowHeight}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="RowHeight" Margin="126,22,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="UCGridColumnCount" Margin="0,48,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
+            <Label Content="{Binding UCGridColumnCount}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="UCGridColumnCount" Margin="126,48,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="UCGridRowCount" Margin="0,74,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Label Content="{Binding UCGridRowCount}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="UCGridRowCount" Margin="126,74,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Label Content="UCGridWidth" Margin="0,100,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" />
+            <Label Content="{Binding UCGridWidth}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="UCGridWidth" Margin="126,100,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Label Content="UCGridHeight" Margin="0,126,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+            <Label Content="{Binding UCGridHeight}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="UCGridHeight" Margin="126,126,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Slider Value="{Binding ColumnWidth}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="ColumnWidth" Minimum="1" Maximum="200" TickFrequency="1" IsSnapToTickEnabled="True" SmallChange = "1" LargeChange="10" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="197"/>
+            <Slider Value="{Binding RowHeight}" ToolTipService.ShowDuration="0x7FFFFFFF" ToolTip="RowHeight" Minimum="1" Maximum="200" TickFrequency="1" IsSnapToTickEnabled="True" SmallChange = "1" LargeChange="10" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Width="197"/>
+        </Grid>
+        <Button Content="Close" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="207" Click="Button_Click_Close"/>
+    </Grid>
+</Window>
